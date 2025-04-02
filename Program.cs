@@ -15,7 +15,7 @@ class Program
         try
         {
             // Define the output path explicitly
-            string outputPath = "../../../Michael_Roy_Software_Engineer.pdf";
+            string outputPath = "./Resumes/Michael_Roy_Software_Engineer.pdf";
             string absolutePath = System.IO.Path.GetFullPath(outputPath);
             Console.WriteLine($"Attempting to save PDF to: {absolutePath}");
 

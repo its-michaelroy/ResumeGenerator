@@ -11,4 +11,8 @@
       <PackageReference Include="QuestPDF" Version="2025.1.6" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Resumes\" />
+    </ItemGroup>
+
 </Project>

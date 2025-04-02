@@ -4,6 +4,8 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using System;
+using System.IO;
+using System.Reflection;
 
 class Program
 {
@@ -14,10 +16,23 @@ class Program
 
         try
         {
-            // Define the output path explicitly
-            string outputPath = "./Resumes/Michael_Roy_Software_Engineer.pdf";
-            string absolutePath = System.IO.Path.GetFullPath(outputPath);
+            // Get the project root directory by navigating up from the executing assembly's location
+            string assemblyLocation = Assembly.GetExecutingAssembly().Location;
+            string assemblyDirectory = Path.GetDirectoryName(assemblyLocation);
+            // Navigate up three levels from /bin/Debug/net8.0 to the project root
+            string projectRoot = Path.GetFullPath(Path.Combine(assemblyDirectory, "..", "..", ".."));
+            
+            // Define the output path in the 'Resumes' folder in the project root
+            string outputPath = Path.Combine(projectRoot, "Resumes", "Michael_Roy_Software_Engineer.pdf");
+            string absolutePath = Path.GetFullPath(outputPath);
             Console.WriteLine($"Attempting to save PDF to: {absolutePath}");
+
+            // Ensure the 'Resumes' folder exists
+            string resumesFolder = Path.GetDirectoryName(outputPath);
+            if (!Directory.Exists(resumesFolder))
+            {
+                throw new DirectoryNotFoundException($"The 'Resumes' folder was not found at '{resumesFolder}'. Please ensure the folder exists in the project root.");
+            }
 
             Document.Create(container =>
             {

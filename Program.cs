@@ -32,11 +32,11 @@ class Program
                     page.Header()
                         .ShowOnce() // Restricts header to first page
                         .PaddingVertical(-0.9f, Unit.Centimetre) // Pulls name in Header closer to Top Margin.
-                        .PaddingBottom(-0.2f, Unit.Centimetre)
+                        .PaddingBottom(-0.5f, Unit.Centimetre)
                         //.AlignCenter()
                         .Column(column =>
                         {
-                            column.Spacing(1.5f);
+                            column.Spacing(1.4f);
                             column.Item()
                                 .AlignCenter()
                                 .Text("MICHAEL ROY")
@@ -65,7 +65,7 @@ class Program
                             //column.Item().Text("SKILLS").FontSize(14).Bold();
                             //column.Item().LineHorizontal(2).LineColor(Colors.Black); // Section break underline
                             // Space after header underline, independent of heading
-                            column.Item().PaddingTop(30).Column(skills =>
+                            column.Item().PaddingTop(40).Column(skills =>
                             {
                                 skills.Spacing(3);
                                 skills.Item().Row(row =>
@@ -86,7 +86,7 @@ class Program
                             });
 
                             // Projects
-                            column.Item().PaddingTop(1.5f); // Space before the new section
+                            column.Item().PaddingTop(1.2f); // Space before the new section
                             column.Item().Text("PROJECTS").FontSize(14).Bold();
                             column.Item().LineHorizontal(1).LineColor(Colors.Black); // Section break underline
                             column.Item().PaddingTop(5).Column(proj =>
@@ -121,7 +121,8 @@ class Program
                                     row.RelativeItem().Text(t =>
                                     {
                                         t.Span("Deep Impact - ").Bold();
-                                        t.Span("deep-impact.onrender.com - 1st Place Hackathon Winner").FontColor(Colors.DeepPurple.Accent4).Bold();
+                                        t.Span("deep-impact.onrender.com ").FontColor(Colors.DeepPurple.Accent4).Bold();
+                                        t.Span("- 1st Place Hackathon Winner").Bold();
                                     });
                                     row.ConstantItem(80).AlignRight().Text("May 2024").Bold();
                                 });
@@ -186,7 +187,7 @@ class Program
                             });
 
                             // Education
-                            column.Item().PaddingTop(1.5f); // Space before the new section
+                            column.Item().PaddingTop(1.2f); // Space before the new section
                             column.Item().Text("EDUCATION").FontSize(14).Bold();
                             column.Item().LineHorizontal(1).LineColor(Colors.Black); // Section break underline
                             column.Item().PaddingTop(5).Column(edu =>
@@ -230,10 +231,10 @@ class Program
                             });
 
                             // Professional Experience
-                            column.Item().PaddingTop(1.5f); // Space before the new section
+                            column.Item().PaddingTop(1.2f); // Space before the new section
                             column.Item().Text("PROFESSIONAL EXPERIENCE").FontSize(14).Bold();
                             column.Item().LineHorizontal(1).LineColor(Colors.Black); // Section break underline
-                            column.Item().PaddingTop(1).Column(exp =>
+                            column.Item().PaddingTop(5).Column(exp =>
                             {
                                 exp.Spacing(3);
                                 exp.Item().Row(row =>
@@ -293,7 +294,7 @@ class Program
                                 {
                                     row.ConstantItem(20);
                                     row.ConstantItem(11).Text("•").FontSize(14);
-                                    row.RelativeItem().Text("Deployed and configured 300+ thin clients, assisted network team with Cisco access points, and provided on-site support for critical data center projects as needed");
+                                    row.RelativeItem().Text("Deployed and configured 300+ thin clients, assisted network team with Cisco access points, and provided on-site support for critical data center projects as needed, ensuring seamless operations for federal employees");
                                 });
 
                                 exp.Item().Row(row =>

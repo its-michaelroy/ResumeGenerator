@@ -19,7 +19,7 @@
 
 ## <h2 id="project-description">📖 Project Description</h2>
 ### 🎯 **Motivation**
-Creating a polished resume can be time-consuming, especially when formatting it manually in tools like Word or Google Docs. `ResumeGenerator` was developed to **automate this process**, providing a **programmatic, repeatable way** to generate a professional resume in PDF format.
+Creating a polished resume can be time-consuming, especially when formatting it manually in tools like Adobe, Word or Google Docs. `ResumeGenerator` was developed to **automate this process**, providing a **programmatic, repeatable way** to generate a professional resume in PDF format.
 
 ### 🎯 **Purpose**
 ✅ Generate a **structured** resume with minimal effort  
@@ -86,7 +86,7 @@ dotnet build
 ```bash
 dotnet run
 ```
-The program generates `Michael_Roy_Software_Engineer.pdf` in the `Resumes` folder, which is included in the project root. (*Change later to desired name)
+The program generates `Michael_Roy_Software_Engineer.pdf` in the `Resumes` folder, which is included in the project root.
 
 ---
 
@@ -95,22 +95,27 @@ The program generates `Michael_Roy_Software_Engineer.pdf` in the `Resumes` folde
 1️⃣ **Edit the Source Code** – Open `Program.cs` in your preferred editor (e.g., Visual Studio, VS Code, Rider).  
 2️⃣ **Customize Content** – Modify the Skills, Projects, Education, and Experience sections by updating the `Text` calls with your details.  
 3️⃣ **Run the Program** – Execute `dotnet run` to generate the PDF.  
-4️⃣ **Check Output** – Find the PDF at `Resumes/Michael_Roy_Software_Engineer.pdf` in the project root (alongside `README.md` and `Program.cs`). The `Resumes` folder is included in the repository, so it should already exist.
+4️⃣ **Check Output** – Find the PDF in `Resumes/` in the project root (alongside `README.md` and `Program.cs`). The `Resumes` folder is included in the repository, so it should already exist.
 
 ### **🔹 Tips**
 ✔ **Adjust Layout** – Tweak `Padding`, `Spacing`, or `FontSize` values in `Program.cs` for custom formatting.  
-✔ **Change Output Path** – (*If needed.) Update the `outputPath` variable in `Program.cs` to save the PDF elsewhere (ensure the target directory exists).  
+✔ **Change PDF Name** – Update the `outputPath` variable in `Program.cs` to change the name of the generated PDF (e.g., from `Michael_Roy_Software_Engineer.pdf` to `My_Resume.pdf`).  
+✔ **Change Output Path** – Update the `outputPath` variable in `Program.cs` to save the PDF elsewhere (ensure the target directory exists).
+
+> [!WARNING]  
+> If you change the `outputPath` in `Program.cs`, ensure the target directory exists. If the directory is missing, the program will fail to generate the PDF.
+
 ✔ **Debug Issues** – Check the console output for error messages if the PDF fails to generate.
 
 ---
 
 ## <h2 id="screenshots">📸 Screenshots</h2>
 ### 📍 Code Overview
-The code defines the resume content and saves it to the `Resumes` folder.
+The code defines the resume content and saves it to the `Resumes` folder.  
 ![Code Overview](Images/code-overview.png)
 
 ### 📍 Generated Resume
-The output PDF is a professional, well-formatted resume.
+The output PDF is a professional, well-formatted resume.  
 ![Generated Resume](Images/resume-output.png)
 
 ---
